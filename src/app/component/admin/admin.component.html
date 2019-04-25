@@ -1,3 +1,39 @@
-<p>
-    admin works!
-</p>
+<!-- Admin -->
+
+<div class="row">
+    <div class="container">
+        <h2>Aministrador</h2>
+        <h4>J1</h4>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Cosa</th>
+                    <th scope="col">fof</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of js.verifica1">
+                    <td>{{ item.nombre }}
+                        <button type="button" class="btn btn-outline-danger" (click)="eliminar(item.nombre)">Eliminar</button>
+                    </td>
+                    <td>{{ item.apellido }}
+                        <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                    </td>
+                    <td>{{ item.ciudad }}
+                        <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                    </td>
+                    <td>{{ item.cosa }}
+                        <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                    </td>
+                    <td>{{ item.fof }}
+                        <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-outline-success">Enviar</button>
+    </div>
+</div>

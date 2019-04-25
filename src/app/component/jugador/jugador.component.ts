@@ -24,7 +24,8 @@ export class JugadorComponent implements OnInit {
     this.renderer.setProperty(this.ciudad.nativeElement, 'value', '');
     this.renderer.setProperty(this.cosa.nativeElement, 'value', '');
     this.renderer.setProperty(this.fof.nativeElement, 'value', '');
-    this.juegoservice.enviar(nombre, apellido, ciudad, cosa, fof);
+
+    this.juegoservice.verificar(nombre, apellido, ciudad, cosa, fof);
   }
 
 }

@@ -12,12 +12,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th *ngFor="let palabra of juegoservice.jugador1">{{palabra.nombre}}</th>
-                    <th *ngFor="let palabra of juegoservice.jugador1">{{palabra.apellido}}</th>
-                    <th *ngFor="let palabra of juegoservice.jugador1">{{palabra.ciudad}}</th>
-                    <th *ngFor="let palabra of juegoservice.jugador1">{{palabra.cosa}}</th>
-                    <th *ngFor="let palabra of juegoservice.jugador1">{{palabra.fof}}</th>
+                <tr *ngFor="let palabra of juegoservice.jugador1">
+                    <th>
+                        {{palabra.nombre}}
+                    </th>
+                    <th>
+                        {{palabra.apellido}}
+                    </th>
+                    <th>
+                        {{palabra.ciudad}}
+                    </th>
+                    <th>
+                        {{palabra.cosa}}
+                    </th>
+                    <th>
+                        {{palabra.fof}}
+                    </th>
                 </tr>
                 <tr>
                     <th><input type="text" #nombre></th>

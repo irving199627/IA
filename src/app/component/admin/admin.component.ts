@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JuegoService } from '../../services/juego.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor( public js: JuegoService) { }
 
   ngOnInit() {
+  }
+
+  eliminar( objeto ) {
+    console.log(objeto);
   }
 }
