@@ -16,24 +16,25 @@
             </thead>
             <tbody>
                 <tr *ngFor="let item of js.verifica1">
-                    <td>{{ item.nombre }}
-                        <button type="button" class="btn btn-outline-danger" (click)="eliminar(item.nombre)">Eliminar</button>
+                    <td #nomb>{{ item.nombre }}
+                        <button type="button" class="btn btn-outline-danger" (click)="eliminarNom()">Eliminar</button>
                     </td>
                     <td>{{ item.apellido }}
-                        <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                        <button type="button" class="btn btn-outline-danger" (click)="eliminarape()">Eliminar</button>
                     </td>
                     <td>{{ item.ciudad }}
-                        <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                        <button type="button" class="btn btn-outline-danger" (click)="eliminarciu()">Eliminar</button>
                     </td>
                     <td>{{ item.cosa }}
-                        <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                        <button type="button" class="btn btn-outline-danger" (click)="eliminarcosa()">Eliminar</button>
                     </td>
                     <td>{{ item.fof }}
-                        <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                        <button type="button" class="btn btn-outline-danger" (click)="eliminarfof()">Eliminar</button>
                     </td>
+                    <button type="button" class="btn btn-outline-success" (click)="verificado1(item.nombre, item.apellido, item.ciudad, item.cosa, item.fof)">Enviar</button>
                 </tr>
             </tbody>
         </table>
-        <button type="button" class="btn btn-outline-success">Enviar</button>
+
     </div>
 </div>

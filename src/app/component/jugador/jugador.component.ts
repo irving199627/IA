@@ -26,6 +26,7 @@ export class JugadorComponent implements OnInit {
     this.renderer.setProperty(this.fof.nativeElement, 'value', '');
 
     this.juegoservice.verificar(nombre, apellido, ciudad, cosa, fof);
+    console.log(this.nombre);
   }
 
 }

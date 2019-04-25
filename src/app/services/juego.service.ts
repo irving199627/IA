@@ -23,16 +23,13 @@ export class JuegoService {
   constructor( ) {
 
   }
-  enviar(nombre, apellido, ciudad, cosa, fof) {
+  almacenar1(nombre, apellido, ciudad, cosa, fof) {
     this.jugador1.push({
           nombre,
           apellido,
           ciudad,
           cosa,
           fof
-    });
-    this.jugador2.forEach( a => {
-      console.log(a);
     });
     // this.renderer.setAttribute(this.nombre.nativeElement, 'disabled', 'true'); // bloquear campos
     // Resetear campos vacíos
