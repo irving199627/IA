@@ -1,4 +1,10 @@
 <div class="row">
+    <div class="col text-center">
+        <h3>{{ juegoservice.letra }}</h3>
+        <button type="button" class="btn btn-outline-secondary" (click)="juegoservice.generarLetra()">Generar Letra</button>
+    </div>
+</div>
+<div class="row" *ngIf="juegoservice.J1">
     <div class="container">
         <h2 class="text-center">Jugador 1</h2>
         <table class="table">
@@ -14,19 +20,19 @@
             <tbody>
                 <tr *ngFor="let palabra of juegoservice.jugador1">
                     <th>
-                        {{palabra.nombre}}
+                        {{palabra.nombre}} <br> {{ palabra.puntsN }}
                     </th>
                     <th>
-                        {{palabra.apellido}}
+                        {{palabra.apellido}} <br> {{ palabra.puntsA }}
                     </th>
                     <th>
-                        {{palabra.ciudad}}
+                        {{palabra.ciudad}} <br> {{ palabra.puntsC }}
                     </th>
                     <th>
-                        {{palabra.cosa}}
+                        {{palabra.cosa}} <br> {{ palabra.puntsCosa }}
                     </th>
                     <th>
-                        {{palabra.fof}}
+                        {{palabra.fof}} <br> {{ palabra.puntsFof }}
                     </th>
                 </tr>
                 <tr>
@@ -39,12 +45,12 @@
 
             </tbody>
         </table>
-        <button type="button" class="btn btn-outline-success" (click)="limpiar(nombre.value, apellido.value, ciudad.value, cosa.value, fof.value)">Enviar</button>
+        <button type="button" class="btn btn-outline-success" (click)="limpiar('J1', nombre.value, apellido.value, ciudad.value, cosa.value, fof.value)">Enviar</button>
+        <button type="button" class="btn btn-outline-success" (click)="btnParo('J1')">Parar</button>
     </div>
 </div>
 
-<br><br><br>
-<div class="row">
+<div class="row" *ngIf="juegoservice.J2">
     <div class="container">
         <h2 class="text-center">Jugador 2</h2>
         <table class="table">
@@ -55,34 +61,38 @@
                     <th scope="col">Ciudad</th>
                     <th scope="col">Cosa</th>
                     <th scope="col">Flor o Fruto</th>
+                    <th scope="col">Suma</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th>Alejandro</th>
-                    <td>Aldana</td>
-                    <td>Alemania</td>
-                    <td>Arbol</td>
-                    <td>Arandano</td>
+                <tr *ngFor="let palabra of juegoservice.jugador2">
+                    <th>
+                        {{palabra.nombre}} <br> {{ palabra.puntsN }}
+                    </th>
+                    <th>
+                        {{palabra.apellido}} <br> {{ palabra.puntsA }}
+                    </th>
+                    <th>
+                        {{palabra.ciudad}} <br> {{ palabra.puntsC }}
+                    </th>
+                    <th>
+                        {{palabra.cosa}} <br> {{ palabra.puntsCosa }}
+                    </th>
+                    <th>
+                        {{palabra.fof}} <br> {{ palabra.puntsFof }}
+                    </th>
                 </tr>
                 <tr>
-                    <th>2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
+                    <th><input type="text" #nombre2></th>
+                    <td><input type="text" #apellido2></td>
+                    <td><input type="text" #ciudad2></td>
+                    <td><input type="text" #cosa2></td>
+                    <td><input type="text" #fof2></td>
                 </tr>
-                <tr>
-                    <th>3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+
             </tbody>
         </table>
-    </div>
-</div>
-<div class="row">
-    <div class="col text-center">
-        <h3>A</h3>
+        <button type="button" class="btn btn-outline-success" (click)="limpiar('J2',nombre2.value, apellido2.value, ciudad2.value, cosa2.value, fof2.value)">Enviar</button>
+        <button type="button" class="btn btn-outline-success" (click)="btnParo('J2')">Parar</button>
     </div>
 </div>
